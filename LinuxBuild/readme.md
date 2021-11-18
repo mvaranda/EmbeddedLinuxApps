@@ -5,6 +5,10 @@ TBD
 
 ## Building
 
+### original branches
+Original branch for poky and meta-xxx were dunfell
+
+
 ### Install dependencies (Ubuntu 20.04)
 ```
 apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
