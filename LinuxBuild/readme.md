@@ -53,9 +53,9 @@ fdisk -l tmp/deploy/images/raspberrypi3/core-image-base-raspberrypi3.rpi-sdimg
 Note the 90112 is the start block of img2
 sudo mkdir /mnt/sdcard
 for Linux partition:
-  sudo mount -t ext4 -o loop,offset=$((90112 * 512)) ~/radiosw-root/rpi-build/tmp/deploy/images/raspberrypi3/core-image-base-raspberrypi3.rpi-sdimg /mnt/sdcard
+  sudo mount -t ext4 -o loop,offset=$((90112 * 512)) ~/EmbeddedLinuxApps/LinuxBuild/rpi-build/tmp/deploy/images/raspberrypi3/core-image-base-raspberrypi3.rpi-sdimg /mnt/sdcard
 for FAT32 (boot):
-  sudo mount -t vfat -o loop,offset=$((8192 * 512)) ~/radiosw-root/rpi-build/tmp/deploy/images/raspberrypi3/core-image-base-raspberrypi3.rpi-sdimg /mnt/sdcard
+  sudo mount -t vfat -o loop,offset=$((8192 * 512)) ~/EmbeddedLinuxApps/LinuxBuild/rpi-build/tmp/deploy/images/raspberrypi3/core-image-base-raspberrypi3.rpi-sdimg /mnt/sdcard
 ```
 Note: offsets 90112 and 8192 may change. Use fdisk to read the offsets:
 ```
