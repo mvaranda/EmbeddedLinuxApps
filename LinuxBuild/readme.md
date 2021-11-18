@@ -19,32 +19,27 @@ Assuming the developer will clone under its $HOME directory
 eval `ssh-agent -s`
 ssh-add ~/.ssh/id_rsa
 cd ~/
-git clone git@eos2git.cec.lab.emc.com:Mobile-Phoenix/radiosw-root.git
-cd ~/radiosw-root
+git clone https://github.com/mvaranda/EmbeddedLinuxApps.git
+cd ~/EmbeddedLinuxApps/LinuxBuild
 git submodule update --init
-source ~/radiosw-root/poky/oe-init-build-env temp
-cd ..
-rm -rf temp
-cd rpi-build
+source ./poky/oe-init-build-env rpi-build
 ```
 
 ### when opening a new bash instance
 ```
 eval `ssh-agent -s`
 ssh-add ~/.ssh/id_rsa
-cd ~/radiosw-root
-source ~/radiosw-root/poky/oe-init-build-env temp
-cd ..
-rm -rf temp
-cd rpi-build
+cd ~/EmbeddedLinuxApps/LinuxBuild
+source ./poky/oe-init-build-env temp
 ```
 
 ### build the image for target (Flash/SD-Card)
 ```
+cd ~/EmbeddedLinuxApps/LinuxBuild/rpi-build
 bitbake core-image-base
 ```
 The output is the file:<br/>
-~/radiosw-root/rpi-build/tmp/deploy/images/raspberrypi3/core-image-base-raspberrypi3.rpi-sdimg
+~/EmbeddedLinuxApps/LinuxBuild/rpi-build/tmp/deploy/images/raspberrypi3/core-image-base-raspberrypi3.rpi-sdimg
 
 ### build the SDK
 ```
@@ -64,21 +59,21 @@ for FAT32 (boot):
 ```
 Note: offsets 90112 and 8192 may change. Use fdisk to read the offsets:
 ```
-fdisk -l ~/radiosw-root/rpi-build/tmp/deploy/images/raspberrypi3/core-image-base-raspberrypi3.rpi-sdimg
+fdisk -l ~/EmbeddedLinuxApps/LinuxBuild/rpi-build/tmp/deploy/images/raspberrypi3/core-image-base-raspberrypi3.rpi-sdimg
 ```
 And update this readme.
 
 ### When submodules change
-radiosw-root points to submodules hash in most cases from radio-dev branches. Every time a repo is changed and you want radiosw-root to point to your changes you will need to pull/commit the change. For example, lets say meta-openembedded has new chenges in its radio-dev branch. then you would:
+EmbeddedLinuxApps/LinuxBuild points to submodules hash in most cases from master branches. Every time a repo is changed and you want EmbeddedLinuxApps/LinuxBuild to point to your changes you will need to pull/commit the change. For example, lets say meta-openembedded has new chenges in its my_meta_branch branch. then you would:
 ```
-cd ~/radiosw-root
+cd ~/EmbeddedLinuxApps/LinuxBuild
 git branch MyBranch
 git checkout MyBranch
-cd ~/radiosw-root/meta-openembedded
-git pull origin radio_dev
+cd ~/EmbeddedLinuxApps/LinuxBuild/meta-openembedded
+git pull origin my_meta_branch
 cd ..
 git add -u
-git commit -m "update submodule metaembedded hash"
+git commit -m "update submodule meta-embedded hash (my_meta_branch)"
 git push
 ```
 
