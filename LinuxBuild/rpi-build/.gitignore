@@ -3,3 +3,5 @@ cache/
 downloads/
 sstate-cache/
 tmp/
+conf/templateconf.cfg
+
