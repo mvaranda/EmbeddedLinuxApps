@@ -81,3 +81,10 @@ git commit -m "update submodule meta-embedded hash (my_meta_branch)"
 git push
 ```
 
+### Burn SDCard
+Check which driver your SDCard is (usually sdb).
+```
+fdisk -l
+sudo dd if=tmp/deploy/images/raspberrypi3/rpi-basic-image-raspberrypi3.rpi-sdimg of=/dev/sdb bs=4M
+```
+
