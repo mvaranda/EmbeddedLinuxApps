@@ -10,3 +10,7 @@
 	path = LinuxBuild/meta-raspberrypi
 	url = git://git.yoctoproject.org/meta-raspberrypi
 	branch = dunfell
+[submodule "LinuxBuild/meta-qt5"]
+	path = LinuxBuild/meta-qt5
+	url = https://github.com/meta-qt5/meta-qt5.git
+	branch = dunfell

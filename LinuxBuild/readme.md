@@ -42,6 +42,11 @@ source ./poky/oe-init-build-env temp
 cd ~/EmbeddedLinuxApps/LinuxBuild/rpi-build
 bitbake core-image-base
 ```
+if desired to have Qt5:
+```
+bitbake core-image-sato
+```
+
 The output is the file:<br/>
 ~/EmbeddedLinuxApps/LinuxBuild/rpi-build/tmp/deploy/images/raspberrypi3/core-image-base-raspberrypi3.rpi-sdimg
 
