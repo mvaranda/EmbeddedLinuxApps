@@ -1,10 +1,17 @@
 /* GdkPixbuf RGB C-Source image dump 1-byte-run-length-encoded */
+/*
+#define POKY_IMG_ROWSTRIDE (2280)
+#define POKY_IMG_WIDTH (570)
+#define POKY_IMG_HEIGHT (720)
+#define POKY_IMG_BYTES_PER_PIXEL (4)
+#define POKY_IMG_RLE_PIXEL_DATA ((uint8*) \
+*/
 
-#define MY_PIXBUF_ROWSTRIDE (3840)
-#define MY_PIXBUF_WIDTH (1280)
-#define MY_PIXBUF_HEIGHT (720)
-#define MY_PIXBUF_BYTES_PER_PIXEL (3) /* 3:RGB, 4:RGBA */
-#define MY_PIXBUF_RLE_PIXEL_DATA ((guint8*) \
+#define POKY_IMG_ROWSTRIDE (3840)
+#define POKY_IMG_WIDTH (1280)
+#define POKY_IMG_HEIGHT (720)
+#define POKY_IMG_BYTES_PER_PIXEL (3) /* 3:RGB, 4:RGBA */
+#define POKY_IMG_RLE_PIXEL_DATA ((uint8*) \
   "\253\3\1\2\220\2\0\1\205\4\0\1\305\2\0\1\1\3\0\1\204\4\0\1\1\3\0\1\377" \
   "\2\0\1\313\2\0\1\1\3\0\1\204\4\0\1\1\3\0\1\311\2\0\1\1\3\1\2\246\2\0" \
   "\1\205\4\0\1\377\2\0\1\354\2\0\1\202\3\1\2\3\2\0\1\3\1\2\2\0\1\240\3" \
